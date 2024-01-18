@@ -105,3 +105,5 @@ app.listen(5500, () => {
   connect();
   console.log("Connected to backend.");
 }); 
+
+// nouvelle version de node installée
