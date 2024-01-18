@@ -18,7 +18,7 @@ import conversationRoute from "./routes/conversation.js";
 import messageRoute from "./routes/message.js";
 import stripeRoute from "./routes/stripe.js";
 import multer from "multer";
-import path, { resolve } from "path";
+import path from "path";
 import { fileURLToPath } from "url";
 
 const app = express();
@@ -79,12 +79,6 @@ app.use("/api/conversations", conversationRoute);
 app.use("/api/messages", messageRoute);
 app.use("/api/checkout", stripeRoute);
 
-app.use(express.static(process.env.STATIC_DIR));
-
-app.get("/", (req, res) => {
-  const path = resolve(process.env.STATIC_DIR + "/index.html");
-  res.sendFile(path);
-});
 
 /** ERROR HANDLING */
 
@@ -106,4 +100,4 @@ app.listen(5500, () => {
   console.log("Connected to backend.");
 }); 
 
-// nouvelle version de node installée
+
